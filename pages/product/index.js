@@ -8,6 +8,10 @@ const Product = () => {
       <Link href={'/product/1'}>
         Product 1 page
       </Link>
+      {/*replace props to prevent adding URL into history, only push and when click back button it will be navigated to homepage*/}
+      <Link href={'/product/2'} replace>
+        Product 2 page
+      </Link>
     </>
   )
 }

@@ -2,12 +2,18 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter()
+  const handleNavigatePage = () => {
+    router.push('/product').then(data => console.log(data))
+  }
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <Link href={'/product'}>Products</Link>
+        <button onClick={handleNavigatePage}>Push to product page</button>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>

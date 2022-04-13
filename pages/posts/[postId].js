@@ -23,6 +23,8 @@ export async function getStaticPaths() {
   })
   return {
     paths,
+    // fallback contain 3 values: false, true, blocking
+    // when fallback set to false => if paths params is not exist => return 404 page, fallback false paths returned will be rendered to HTML file with corresponding "id"
     fallback: false,
   }
 }

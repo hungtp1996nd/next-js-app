@@ -13,6 +13,7 @@ export default function Home() {
     <div className={styles.container}>
       <main className={styles.main}>
         <Link href={'/product'}>Products</Link>
+        <Link href={'/posts'}>Posts</Link>
         <button onClick={handleNavigatePage}>Push to product page</button>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>

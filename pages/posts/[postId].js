@@ -1,3 +1,5 @@
+import { getPathFromLimit } from "../../lib/post";
+
 const Post = ({ post }) => {
   return (
     <>
@@ -10,17 +12,7 @@ const Post = ({ post }) => {
 export default Post;
 
 export async function getStaticPaths() {
-  const data = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const posts = await data.json()
-
-  // need to define paths array of postId we need calling and get response from dynamic this postId
-  const paths = posts.map(post => {
-    return {
-      params: {
-        postId: `${post.id}`
-      }
-    }
-  })
+  const paths = await getPathFromLimit(5)
   return {
     paths,
     // fallback contain 3 values: false, true, blocking

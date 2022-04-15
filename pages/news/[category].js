@@ -19,7 +19,9 @@ const Category = ({ articles, category }) => {
 
 export default Category
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps(context) {
+  // destructuring req, res same as express, query as query string client
+  const { params, req, res, query } = context
   const { category } = params
   const response = await fetch(`http://localhost:4000/news?category=${category}`)
   const articles = await response.json()

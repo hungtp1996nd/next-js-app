@@ -37,6 +37,12 @@
       "title": "New article 3",
       "category": "politics",
       "description": "Product for item 3"
+    },
+    {
+      "id": 4,
+      "title": "New article 4",
+      "category": "sports",
+      "description": "Product for item 4"
     }
   ]
 }

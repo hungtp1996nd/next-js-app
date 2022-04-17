@@ -1,11 +1,15 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const Events = ({ eventList }) => {
   const [events, setEvents] = useState(eventList)
+  const router = useRouter()
+
   const handleFilterSportCategory = async () => {
     const response = await fetch('http://localhost:4000/events?category=sports')
     const data = await response.json()
     setEvents(data)
+    await router.push('/events?category=sports', undefined, { shallow: true })
   }
   return (
     <div>
